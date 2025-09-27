@@ -27,5 +27,5 @@ def liste_favorise(aime_livres):
             dict_count[titre] = 1
     return dict_count
 
-
+print(liste_favorise(aime_livres))
 
