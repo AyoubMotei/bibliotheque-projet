@@ -34,4 +34,12 @@ def pagination(list_name):
         print(f"\n--- Page {page} --- \n{list_name[items_per_page:items_per_page + 2]}")
         items_per_page += 1
         page += 1
-        
+    
+def recherche_par_auteur(list_name, auteur):
+    return list(filter(lambda livre: livre['auteur'] == auteur, list_name))
+
+def recherche_par_titre(list_name, titre):
+    return list(filter(lambda livre: livre['titre'] == titre, list_name))
+
+def recherche_par_annee(list_name, annee):
+    return list(filter(lambda livre: livre['année'] == annee, list_name))
