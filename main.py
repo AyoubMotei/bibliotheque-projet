@@ -44,4 +44,4 @@ while True :
         break
     
     else:
-        print("\nVous devez choisir entre 0 et 4 !")
+        print("\nChoix invalid !")

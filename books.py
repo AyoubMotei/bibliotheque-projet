@@ -1,4 +1,5 @@
 #books.py
+from data import aime_livres, livres, utilisateurs
 
 # fonction : Trier les livres par année de publication
 def trier_book_annee(livres):
@@ -15,4 +16,16 @@ def liste_favorise(liste_name, liste_aime):
         new_list = list(filter(lambda i: i[0] == index ,liste_aime))
 
     return new_list
+
+# fonction : construire un dictionnaire des livres aimés
+def liste_favorise(aime_livres):
+    dict_count = {}
+    for _, titre in aime_livres: 
+        if titre in dict_count:
+            dict_count[titre] += 1
+        else:
+            dict_count[titre] = 1
+    return dict_count
+
+
 
