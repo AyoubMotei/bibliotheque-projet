@@ -27,5 +27,11 @@ def liste_favorise(aime_livres):
             dict_count[titre] = 1
     return dict_count
 
-print(liste_favorise(aime_livres))
-
+def pagination(list_name):
+    page = 1
+    items_per_page = 0
+    while items_per_page < len(list_name):
+        print(f"\n--- Page {page} --- \n{list_name[items_per_page:items_per_page + 2]}")
+        items_per_page += 1
+        page += 1
+        
