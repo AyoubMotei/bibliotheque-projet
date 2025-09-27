@@ -17,31 +17,32 @@ def menu():
     print("0 -> Quitter")
     
     
-while True :
-    menu()    
+while True:
+    menu()
     choix = input("\nVotre choix : ")
-    
-    if choix == 1:
-        print("\nLa liste des livres tries par annee de publication :")
-        print(trier_book_annee(livres))
-        
-    elif choix == 2:
-        print("\nVoici livre le plus ancien et le plus recent : ")
+
+    if choix == "1":
+        print("\nLa liste des livres triés par année de publication :")
+        affichage(trier_book_annee(livres))
+
+    elif choix == "2":
+        print("\nVoici le livre le plus ancien et le plus récent :")
         Aide = identifier_ancien_recent(livres)
-        print(affichage(Aide))
-        
-    elif choix == 3:
-        print("\nVoici la liste des livres favorises: ")
-        Aide = liste_favorise(livres, aime_livres)
-        print(affichage(Aide))
-        
-    elif choix == 4:
-        print("\nVoici les livres disponibles : ")
-        print(affichage(livres))
-        
-    elif choix == 0:
-        print(" Au revoir !")
+        affichage(list(Aide))
+
+    elif choix == "3":
+        print("\nVoici la liste des livres favorisés :")
+        favoris = liste_favorise(aime_livres)
+        for titre, count in favoris.items():
+            print(f"Livre : {titre} | Nombre d'utilisateurs qui aiment : {count}")
+
+    elif choix == "4":
+        print("\nVoici les livres disponibles :")
+        affichage(livres)
+
+    elif choix == "0":
+        print("Au revoir !")
         break
-    
+
     else:
-        print("\nChoix invalid !")
+        print("\nChoix invalide !")
