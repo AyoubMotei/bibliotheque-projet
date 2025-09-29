@@ -1,5 +1,6 @@
 from books import *
-from data import livres, aime_livres
+from users import *
+from data import livres, aime_livres,utilisateurs
 
 def affichage(nom_liste):
     print("\n---------------- Liste des livres disponibles : ----------------")
@@ -14,6 +15,13 @@ def menu():
     print("2 -> Identifier le plus ancien et le plus récent")
     print("3 -> Fiche des favoris")
     print("4 -> Afficher les livres")
+    print("5 -> Filtrer les utilisateurs majeurs")
+    print("6 -> Formater les noms complet en majescule")
+    print("7 -> Dictionnaire asspciant utilisateur a ses livres aimés ")
+    print("8 -> Rappoprt des utilisateurs")
+
+
+
     print("0 -> Quitter")
     
     
@@ -39,10 +47,30 @@ while True:
     elif choix == "4":
         print("\nVoici les livres disponibles :")
         affichage(livres)
-
+    
+    elif choix == "5":
+        print("\nVoici les utilisateurs majeurs:")
+        majeurs = list(filter(est_majeur, utilisateurs))
+        print(majeurs)
+    
+    elif choix == "6":
+        print("\nVoici les noms complet en majescule:")
+        noms_majuscules = list(noms_majuscules)
+        print (noms_majuscules)
+    
+    elif choix == "7":
+        print("\nVoici le dictionnaire associant l'utilisateur a ses livres aimées:")
+        print(listeFavoris(aime_livres,utilisateurs))
+        
+    elif choix == "8":
+        print("\nVoici un rapport des utilisateur:")
+        print(resumeFavoris(aime_livres, utilisateurs))
+    
     elif choix == "0":
         print("Au revoir !")
         break
 
     else:
         print("\nChoix invalide !")
+
+
